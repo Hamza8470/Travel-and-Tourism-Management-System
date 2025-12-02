@@ -1,0 +1,22 @@
+# Maven
+target/
+*.jar
+
+# IDEs
+.idea/
+*.iml
+*.classpath
+*.project
+.vscode/
+
+# OS
+Thumbs.db
+Desktop.ini
+*.DS_Store
+
+# Java
+*.class
+*.log
+
+# Local libs
+lib/**/target/
