@@ -1,13 +1,24 @@
 
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.event.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class Feedback extends JFrame implements ChangeListener, ActionListener {
 
     // public static void main(String[] args) {
-    //     new Feedback("").setVisible(true);
+    // new Feedback("").setVisible(true);
     // }
     JPanel panel;
     JLabel label;
@@ -18,7 +29,7 @@ public class Feedback extends JFrame implements ChangeListener, ActionListener {
 
     Feedback(String user) {
 
-        username=user;
+        username = user;
 
         setLayout(null);
 
@@ -87,8 +98,6 @@ public class Feedback extends JFrame implements ChangeListener, ActionListener {
 
     }
 
-    
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -100,14 +109,12 @@ public class Feedback extends JFrame implements ChangeListener, ActionListener {
             c.stmt.executeUpdate(q);
             JOptionPane.showMessageDialog(null, "Thank you for your valuable feedback!");
             this.setVisible(false);
-        }catch(Exception ae){
+        } catch (Exception ae) {
             JOptionPane.showMessageDialog(null, "Error saving feedback. Please try again.");
             ae.printStackTrace();
 
         }
-        
 
     }
-
 
 }

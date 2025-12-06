@@ -22,9 +22,7 @@ public class ViewBookedHotel extends JFrame implements ActionListener{
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/bookedhotelDetails.jpg"));
-        Image i2=i1.getImage().getScaledInstance(480, 540, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("bookedhotelDetails.jpg", 480, 540);
         JLabel il = new JLabel(i3);
         il.setBounds(450, 10, 480, 540);
         add(il);

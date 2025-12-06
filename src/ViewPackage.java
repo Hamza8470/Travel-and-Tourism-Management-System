@@ -20,9 +20,7 @@ public class ViewPackage extends JFrame implements ActionListener{
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/bookedDetails.jpg"));
-        Image i2=i1.getImage().getScaledInstance(500, 500, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("bookedDetails.jpg", 450, 320);
         JLabel il = new JLabel(i3);
         il.setBounds(360, 40, 450, 320);
         add(il);
