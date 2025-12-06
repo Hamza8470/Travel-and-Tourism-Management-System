@@ -181,34 +181,34 @@ public class AddCustomer extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == b1) {
             Conns c = new Conns();
-            String username = t1.getText();
-            String id = (String) c1.getSelectedItem();// return object(type casting) because obj can't be converted into
-                                                      // String
-            String number = t2.getText();
-
-            String name = t3.getText();
+            String username = t1.getText().trim();
+            String name = t3.getText().trim();
             String radio = null;
             if (r1.isSelected()) {
                 radio = "Male";
             } else if (r2.isSelected()) {
                 radio = "Female";
             }
+            String email = t7.getText().trim();
+            String phone = t6.getText().trim();
+            String address = t5.getText().trim();
 
-            String country = t4.getText();
-            String address = t5.getText();
-            String phone = t6.getText();
-            String email = t7.getText();
+            if (username.isEmpty() || name.isEmpty() || email.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please fill at least Username, Name and Email fields.");
+                return;
+            }
 
-            String q = "insert into customer values ('" + username + "','" + id + "','" + number + "','" + name + "','"
-                    + radio + "','" + country + "','" + address + "','" + phone + "','" + email + "')";
+            String q = "INSERT INTO customer (username, name, email, phone, address, gender) VALUES ('"
+                    + username + "','" + name + "','" + email + "','" + phone + "','" + address + "','" + radio
+                    + "')";
             try {
-
                 c.stmt.executeUpdate(q);
                 JOptionPane.showMessageDialog(null, "Customer Details Added Successfully");
                 this.setVisible(false);
 
             } catch (Exception e) {
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Failed to add customer: " + e.getMessage());
             }
 
         } else if (ae.getSource() == b2) {
