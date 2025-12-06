@@ -199,10 +199,10 @@ public class AddCustomer extends JFrame implements ActionListener {
             String phone = t6.getText();
             String email = t7.getText();
 
-            String q = "insert into customer values ('" +username+ "','" +id+ "','" +number+ "','" + name + "','"
+            String q = "insert into customer values ('" + username + "','" + id + "','" + number + "','" + name + "','"
                     + radio + "','" + country + "','" + address + "','" + phone + "','" + email + "')";
             try {
-                
+
                 c.stmt.executeUpdate(q);
                 JOptionPane.showMessageDialog(null, "Customer Details Added Successfully");
                 this.setVisible(false);
@@ -218,5 +218,4 @@ public class AddCustomer extends JFrame implements ActionListener {
 
     }
 
-   
 }

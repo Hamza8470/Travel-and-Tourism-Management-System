@@ -1,8 +1,10 @@
 // package travel.Management.System;
 
-import java.awt.event.*;
-import java.awt.*;
 import java.awt.Choice;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
 import javax.swing.ImageIcon;
@@ -13,9 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class BookHotel extends JFrame implements ActionListener {
-    
+
     // public static void main(String[] args) {
-    //     new BookHotel("").setVisible(true);
+    // new BookHotel("").setVisible(true);
     // }
     Choice c1, c2, c3;
     JTextField t1, t2;
@@ -193,7 +195,7 @@ public class BookHotel extends JFrame implements ActionListener {
 
         try {
             Conns c = new Conns();
-            ResultSet rs = c.stmt.executeQuery("select * from customer where username = '"+username+"'");
+            ResultSet rs = c.stmt.executeQuery("select * from customer where username = '" + username + "'");
             while (rs.next()) {
                 l21.setText(rs.getString("username"));
                 l22.setText(rs.getString("id"));
@@ -249,12 +251,15 @@ public class BookHotel extends JFrame implements ActionListener {
         } else if (ae.getSource() == b2) {
             try {
                 Conns c = new Conns();
-                c.stmt.executeUpdate("insert into bookhotel values('"+l21.getText()+"','"+c1.getSelectedItem()+"','"+t1.getText()+"','"+t2.getText()+"','"+c2.getSelectedItem()+"','"+c3.getSelectedItem()+"','"+l22.getText()+"','"+l23.getText()+"','"+l24.getText()+"','"+l25.getText()+"')");
+                c.stmt.executeUpdate("insert into bookhotel values('" + l21.getText() + "','" + c1.getSelectedItem()
+                        + "','" + t1.getText() + "','" + t2.getText() + "','" + c2.getSelectedItem() + "','"
+                        + c3.getSelectedItem() + "','" + l22.getText() + "','" + l23.getText() + "','" + l24.getText()
+                        + "','" + l25.getText() + "')");
 
                 JOptionPane.showMessageDialog(null, "Hotel booked Successfully");
                 this.setVisible(false);
             } catch (Exception e) {
-            
+
                 e.printStackTrace();
             }
         } else if (ae.getSource() == b3) {
@@ -262,7 +267,5 @@ public class BookHotel extends JFrame implements ActionListener {
 
         }
     }
-
-    
 
 }
