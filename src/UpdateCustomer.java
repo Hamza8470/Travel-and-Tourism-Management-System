@@ -142,16 +142,16 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
         try {
             Conns c = new Conns();
-            ResultSet rs = c.stmt.executeQuery("select * from Customer where username = '" + username + "' ");
+            ResultSet rs = c.stmt.executeQuery("select * from customer where username = '" + username + "' ");
             while (rs.next()) {
                 t1.setText(rs.getString("username"));
-                t2.setText(rs.getString("number"));
+                t2.setText("");
                 t3.setText(rs.getString("name"));
-                t4.setText(rs.getString("country"));
+                t4.setText("");
                 t5.setText(rs.getString("address"));
                 t6.setText(rs.getString("phone"));
                 t7.setText(rs.getString("email"));
-                t8.setText(rs.getString("id"));
+                t8.setText("");
                 t9.setText(rs.getString("gender"));
             }
 
@@ -164,27 +164,33 @@ public class UpdateCustomer extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == b1) {
-            String username = t1.getText();
-            String id = t8.getText();// return object(type casting) because obj can't be converted into String
-            String number = t2.getText();
-            String name = t3.getText();
-            String radio = t9.getText();
-            String country = t4.getText();
-            String address = t5.getText();
-            String phone = t6.getText();
-            String email = t7.getText();
+            String username = t1.getText().trim();
+            String name = t3.getText().trim();
+            String radio = t9.getText().trim();
+            String address = t5.getText().trim();
+            String phone = t6.getText().trim();
+            String email = t7.getText().trim();
 
-            String q = "update customer set username ='" + username + "',id= '" + id + "',number= '" + number
-                    + "',name='" + name + "',gender= '" + radio + "',country= '" + country + "',address ='" + address
-                    + "',phone ='" + phone + "',email= '" + email + "' where username ='" + username + "' ";
+            if (username.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Username cannot be empty");
+                return;
+            }
+
+            String q = "UPDATE customer SET name='" + name + "', email='" + email + "', phone='" + phone
+                    + "', address='" + address + "', gender='" + radio + "' WHERE username='" + username + "'";
             try {
                 Conns c = new Conns();
-                c.stmt.executeUpdate(q);
-                JOptionPane.showMessageDialog(null, "Customer Details Updated Successfully");
+                int updated = c.stmt.executeUpdate(q);
+                if (updated > 0) {
+                    JOptionPane.showMessageDialog(null, "Customer Details Updated Successfully");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No customer found with username: " + username);
+                }
                 this.setVisible(false);
 
             } catch (Exception e) {
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Failed to update: " + e.getMessage());
             }
 
         } else if (ae.getSource() == b2) {

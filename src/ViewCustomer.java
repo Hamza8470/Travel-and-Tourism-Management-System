@@ -72,35 +72,36 @@ public class ViewCustomer extends JFrame implements ActionListener ,Runnable {
             l12.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l12);
             
-            JLabel l3 = new JLabel("Id :");
+            JLabel l3 = new JLabel("Name :");
             l3.setBounds(30, 100, 100, 25);
             l3.setForeground(Color.black);
             l3.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l3);
-            
+
              l13 = new JLabel();
             l13.setBounds(190, 100, 200, 25);
             l13.setForeground(Color.black);
             l13.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l13);
-            
-            JLabel l4 = new JLabel("Number :");
+
+            JLabel l4 = new JLabel("Email :");
             l4.setBounds(30, 150, 100, 25);
             l4.setForeground(Color.black);
             l4.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l4);
-            
+
              l14 = new JLabel();
             l14.setBounds(190, 150, 200, 25);
             l14.setForeground(Color.black);
             l14.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l14);
-            JLabel l5 = new JLabel("name :");
+
+            JLabel l5 = new JLabel("Phone :");
             l5.setBounds(30, 200, 100, 25);
             l5.setForeground(Color.black);
             l5.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l5);
-            
+
              l15 = new JLabel();
             l15.setForeground(Color.black);
             l15.setBounds(190, 200, 200, 25);
@@ -119,36 +120,36 @@ public class ViewCustomer extends JFrame implements ActionListener ,Runnable {
             l16.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l16);
             
-            JLabel l7 = new JLabel("Country :");
+            JLabel l7 = new JLabel("Address :");
             l7.setBounds(360, 50, 100, 25);
             l7.setForeground(Color.black);
             l7.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l7);
-            
+
              l17 = new JLabel();
             l17.setBounds(520, 50, 200, 25);
             l17.setForeground(Color.black);
             l17.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l17);
-            
-            JLabel l8 = new JLabel("Address :");
+
+            JLabel l8 = new JLabel("Gender :");
             l8.setBounds(360, 100, 100, 25);
             l8.setForeground(Color.black);
             l8.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l8);
-            
+
              l18 = new JLabel();
             l18.setBounds(520, 100, 200, 25);
             l18.setForeground(Color.black);
             l18.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l18);
-            
-            JLabel l9 = new JLabel("Phone :");
+
+            JLabel l9 = new JLabel("(unused)");
             l9.setBounds(360, 150, 100, 25);
             l9.setForeground(Color.black);
             l9.setFont(new Font("Tahoma", Font.BOLD, 15));
             add(l9);
-            
+
              l19 = new JLabel();
             l19.setBounds(520, 150, 200, 25);
             l19.setForeground(Color.black);
@@ -179,24 +180,22 @@ public class ViewCustomer extends JFrame implements ActionListener ,Runnable {
             
             try {
                 Conns c = new Conns();
-            ResultSet rs = c.stmt.executeQuery("Select * from customer where username ='" + username + "'");
-            while (rs.next()) {
-                l12.setText(rs.getString("username"));
-                l13.setText(rs.getString("id"));
-                l14.setText(rs.getString("number"));
-                l15.setText(rs.getString("name"));
-                l16.setText(rs.getString("gender"));
-                l17.setText(rs.getString("country"));
-                l18.setText(rs.getString("address"));
-                l19.setText(rs.getString("phone"));
-                l110.setText(rs.getString("email"));
+                ResultSet rs = c.stmt.executeQuery("Select * from customer where username ='" + username + "'");
+                while (rs.next()) {
+                    l12.setText(rs.getString("username"));
+                    l13.setText(rs.getString("name"));
+                    l14.setText(rs.getString("email"));
+                    l15.setText(rs.getString("phone"));
+                    l16.setText(rs.getString("gender"));
+                    l17.setText(rs.getString("address"));
+                    l18.setText("");
+                    l19.setText("");
+                    l110.setText("");
+                }
 
+            } catch (SQLException e1) {
+                e1.printStackTrace();
             }
-
-        } catch (SQLException e1) {
-            
-            e1.printStackTrace();
-        }
         try {
 
         } catch (Exception e) {

@@ -146,19 +146,18 @@ public class DeleteCustomer extends JFrame implements ActionListener{
         add(l19);
 
         try {
-            Conns c =new Conns();
+            Conns c = new Conns();
             ResultSet rs = c.stmt.executeQuery("select * from customer where username = '"+username+"' ");
             while (rs.next()) {
                 l11.setText(rs.getString("username"));
                 l12.setText(rs.getString("name"));
-                l13.setText(rs.getString("id"));
-                l14.setText(rs.getString("number"));
+                l13.setText("");
+                l14.setText(rs.getString("email"));
                 l15.setText(rs.getString("gender"));
-                l16.setText(rs.getString("country"));
+                l16.setText("");
                 l17.setText(rs.getString("address"));
                 l18.setText(rs.getString("phone"));
-                l19.setText(rs.getString("email"));
-                
+                l19.setText("");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -191,14 +190,16 @@ public class DeleteCustomer extends JFrame implements ActionListener{
                 
                 try {
                         Conns c = new Conns();
-                        c.stmt.executeUpdate("delete from account where username = '"+username+"'");
+                        // delete dependent bookings first
                         c.stmt.executeUpdate("delete from bookhotel where username = '"+username+"'");
                         c.stmt.executeUpdate("delete from bookpackage where username = '"+username+"'");
+                        // then delete customer record
                         c.stmt.executeUpdate("delete from customer where username = '"+username+"'");
-                        
+                        // finally remove account
+                        c.stmt.executeUpdate("delete from account where username = '"+username+"'");
+
                         JOptionPane.showMessageDialog(null, "Customer Details Deleted Successfully");
-                        
-                        // System.exit(0);
+
                         new Feedback(username);
                     } catch (Exception e) {
                         e.printStackTrace();
