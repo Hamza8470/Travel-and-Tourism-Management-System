@@ -46,19 +46,13 @@ public class ViewCustomer extends JFrame implements ActionListener ,Runnable {
         ImageIcon[] iimage = new ImageIcon[] { i11, i12, i13, i14, i15, i16, i17, i18, i19, i20 };
         
         for (int i = 0; i <= 9; i++) {
-
-            image[i] = new ImageIcon(
-                ClassLoader.getSystemResource("ICONS/dest" + (i + 1) + ".jpg"));
-                jimage[i] = image[i].getImage().getScaledInstance(720, 550, Image.SCALE_DEFAULT);
-                iimage[i] = new ImageIcon(jimage[i]);
-                this.label[i] = new JLabel(iimage[i]);
-                this.label[i].setBounds(0, 370, 720, 150);
-                add(this.label[i]);
-                
-                t1 = new Thread(this);
-                t1.start();
-            
-                }
+            ImageIcon scaled = ImageLoader.loadAndScaleImage("dest" + (i + 1) + ".jpg", 720, 150);
+            this.label[i] = new JLabel(scaled);
+            this.label[i].setBounds(0, 370, 720, 150);
+            add(this.label[i]);
+        }
+        t1 = new Thread(this);
+        t1.start();
             // ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("travel/Management/System/ICONS/2714452.jpg"));
             // Image i2 = i1.getImage().getScaledInstance(720, 150, Image.SCALE_DEFAULT);
             // ImageIcon i3 = new ImageIcon(i2);

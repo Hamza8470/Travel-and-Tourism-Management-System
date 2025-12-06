@@ -19,9 +19,7 @@ public class Payment extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/paytm.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(800, 500, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("paytm.jpg", 800, 500);
         JLabel l1 = new JLabel(i3);
         l1.setBounds(0, 0, 800, 500);
         add(l1);
