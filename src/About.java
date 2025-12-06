@@ -30,9 +30,7 @@ public class About extends JFrame implements ActionListener{
         l1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
         
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/Logo.png"));
-        Image i2 = i1.getImage().getScaledInstance(250, 100, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("Logo.png", 250, 100);
         JLabel l10 = new JLabel(i3);
         l10.setBounds(470, 20, 100, 50);
         add(l10);

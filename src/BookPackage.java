@@ -26,9 +26,7 @@ public class BookPackage extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.black);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/bookpackage.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(500, 400, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("bookpackage.jpg", 500, 400);
         JLabel l16 = new JLabel(i3);
         l16.setBounds(400, 20, 400, 320);
         add(l16);

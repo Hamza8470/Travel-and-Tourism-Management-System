@@ -105,9 +105,7 @@ public class CheckPackage extends JFrame {
         l11.setFont(new Font("Tahoma",Font.BOLD,32));
         p1.add(l11);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/"+pack[11]+""));
-        Image i2=i1.getImage().getScaledInstance(450, 400, Image.SCALE_DEFAULT);
-        ImageIcon i3= new ImageIcon(i2);
+        ImageIcon i3= ImageLoader.loadAndScaleImage(pack[11], 450, 400);
         JLabel l12 =new JLabel(i3);
         l12.setBounds(300,30,450,400);
         p1.add(l12);

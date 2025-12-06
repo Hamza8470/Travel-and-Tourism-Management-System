@@ -2,8 +2,9 @@
 import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,7 +20,7 @@ public class Signup extends JFrame implements ActionListener {
     Choice c1;
 
     Signup() {
-        
+
         setLayout(null);
         setBounds(370, 250, 800, 400);
         getContentPane().setBackground(Color.white);
@@ -84,10 +85,8 @@ public class Signup extends JFrame implements ActionListener {
         t4.setBorder(BorderFactory.createEmptyBorder());
         p1.add(t4);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/signup.png"));
-        Image i2 = i1.getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
-        JLabel l6 = new JLabel(i3);
+        ImageIcon i1 = ImageLoader.loadAndScaleImage("signup.png", 250, 250);
+        JLabel l6 = new JLabel(i1);
         l6.setBounds(490, 40, 250, 250);
         add(l6);
 
@@ -130,8 +129,9 @@ public class Signup extends JFrame implements ActionListener {
             String security = c1.getSelectedItem();
             String answer = t4.getText();
             if (username.isEmpty() || password.isEmpty() || answer.isEmpty() || name.isEmpty()) {
-                JFrame f1=new JFrame();
-                JOptionPane.showMessageDialog(f1,"Please make sure all fields are filled in","Warning", JOptionPane.WARNING_MESSAGE);
+                JFrame f1 = new JFrame();
+                JOptionPane.showMessageDialog(f1, "Please make sure all fields are filled in", "Warning",
+                        JOptionPane.WARNING_MESSAGE);
 
             } else {
                 String query = "insert into account values ('" + username + "', '" + name + "','" + password + "','"
@@ -156,7 +156,5 @@ public class Signup extends JFrame implements ActionListener {
         }
 
     }
-
-   
 
 }
