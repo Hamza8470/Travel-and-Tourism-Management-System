@@ -1,11 +1,11 @@
 
+import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Choice;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-import java.awt.*;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,7 +19,6 @@ public class BookPackage extends JFrame implements ActionListener {
     JTextField t1;
     JButton b1, b2, b3;
 
-   
     BookPackage(String user) {
         String username = user;
         setBounds(500, 200, 840, 450);
@@ -65,7 +64,7 @@ public class BookPackage extends JFrame implements ActionListener {
 
         JLabel l4 = new JLabel("Total Persons:");
         l4.setBounds(30, 150, 150, 20);
-        
+
         l4.setForeground(Color.white);
         l4.setFont(new Font("Tahoma", Font.PLAIN, 14));
         add(l4);
@@ -201,5 +200,4 @@ public class BookPackage extends JFrame implements ActionListener {
 
     }
 
-    
 }

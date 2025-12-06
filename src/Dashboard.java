@@ -1,8 +1,12 @@
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,8 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.ColorUIResource;
-
-import java.awt.event.*;
 
 public class Dashboard extends JFrame implements ActionListener, MouseListener, Runnable {
 
@@ -319,7 +321,7 @@ public class Dashboard extends JFrame implements ActionListener, MouseListener, 
 
         } else if (ae.getSource() == b12) {
             new Payment().setVisible(true);
-            
+
         } else if (ae.getSource() == b13) {
             try {
                 Runtime.getRuntime().exec("calc.exe");
@@ -339,8 +341,9 @@ public class Dashboard extends JFrame implements ActionListener, MouseListener, 
             new About().setVisible(true);
 
         } else if (ae.getSource() == b16) {
-            // System.exit(0);
-            new Feedback(username);
+            // Logout - close this window and go back to login
+            this.setVisible(false);
+            new Login().setVisible(true);
 
         }
 

@@ -100,8 +100,8 @@ public class Feedback extends JFrame implements ChangeListener, ActionListener {
             c.stmt.executeUpdate(q);
             JOptionPane.showMessageDialog(null, "Thank you for your valuable feedback!");
             this.setVisible(false);
-            System.exit(0);
         }catch(Exception ae){
+            JOptionPane.showMessageDialog(null, "Error saving feedback. Please try again.");
             ae.printStackTrace();
 
         }
