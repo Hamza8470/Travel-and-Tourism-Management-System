@@ -28,9 +28,7 @@ public class BookHotel extends JFrame implements ActionListener {
         setLayout(null);// by default border Layout
         getContentPane().setBackground(Color.black);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/book.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(340, 480, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("book.jpg", 340, 480);
         JLabel l0 = new JLabel(i3);
         l0.setBounds(440, 40, 340, 480);
         add(l0);

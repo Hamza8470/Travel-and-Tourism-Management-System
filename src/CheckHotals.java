@@ -71,9 +71,7 @@ public class CheckHotals extends JFrame implements Runnable {
 
         for (int i = 0; i <= 9; i++) {
 
-            image[i] = new ImageIcon(ClassLoader.getSystemResource("ICONS/hotel" + (i + 1) + ".jpg"));
-            jimage[i] = image[i].getImage().getScaledInstance(900, 550, Image.SCALE_DEFAULT);
-            iimage[i] = new ImageIcon(jimage[i]);
+            iimage[i] = ImageLoader.loadAndScaleImage("hotel" + (i + 1) + ".jpg", 900, 550);
             this.label[i] = new JLabel(iimage[i]);
             this.label[i].setBounds(0, 0, 900, 550);
             add(this.label[i]);

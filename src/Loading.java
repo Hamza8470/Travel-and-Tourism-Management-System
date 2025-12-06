@@ -1,5 +1,6 @@
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -8,7 +9,7 @@ import javax.swing.JProgressBar;
 
 public class Loading extends JFrame implements Runnable {
     // public static void main(String[] args) {
-    //     new Loading("").setVisible(true);
+    // new Loading("").setVisible(true);
     // }
 
     Thread t;
@@ -52,18 +53,15 @@ public class Loading extends JFrame implements Runnable {
 
         username = user;
         t = new Thread(this);
-        
+
         setBounds(500, 280, 560, 400);
         setLayout(null);// by default border Layout
         getContentPane().setBackground(Color.white);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/bookedhotelDetails.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(545, 360, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
-        JLabel l1 = new JLabel(i3);
+        ImageIcon i1 = ImageLoader.loadAndScaleImage("bookedhotelDetails.jpg", 545, 360);
+        JLabel l1 = new JLabel(i1);
         l1.setBounds(0, 0, 545, 360);
         add(l1);
-        
 
         JLabel l01 = new JLabel("Travel And Tourism Application ");
         l01.setBounds(40, 15, 500, 30);
@@ -84,7 +82,7 @@ public class Loading extends JFrame implements Runnable {
         l2.setForeground(Color.blue);
         l1.add(l2);
 
-        JLabel l3 = new JLabel("Welcome " +username+"...");
+        JLabel l3 = new JLabel("Welcome " + username + "...");
         l3.setBounds(10, 335, 200, 20);
         l3.setFont(new Font("Serif", Font.BOLD, 15));
         l3.setForeground(Color.black);
@@ -95,5 +93,4 @@ public class Loading extends JFrame implements Runnable {
         setVisible(true);
     }
 
-   
 }

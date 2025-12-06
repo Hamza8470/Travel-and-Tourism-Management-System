@@ -1,9 +1,10 @@
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -31,13 +32,13 @@ public class Login extends JFrame implements ActionListener {
         p1.setBackground(Color.WHITE);
         add(p1);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/login.png"));
-        Image i2 = i1.getImage().getScaledInstance(350, 350, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
-        JLabel l1 = new JLabel(i3);
-        p1.setLayout(null);
-        l1.setBounds(15, 10, 350, 350);
-        p1.add(l1);
+        ImageIcon i1 = ImageLoader.loadAndScaleImage("login.png", 350, 350);
+        if (i1 != null) {
+            JLabel l1 = new JLabel(i1);
+            p1.setLayout(null);
+            l1.setBounds(15, 10, 350, 350);
+            p1.add(l1);
+        }
 
         // Second Pannel
         JPanel p2 = new JPanel();
@@ -108,7 +109,7 @@ public class Login extends JFrame implements ActionListener {
                 String username = t1.getText();
                 String password = String.valueOf(t2.getPassword());
 
-                if(username.equals("admin") && password.equals("admin")){
+                if (username.equals("admin") && password.equals("admin")) {
                     this.setVisible(false);
                     new security(username);
                     JOptionPane.showMessageDialog(null, "Admin Login!");
@@ -125,8 +126,8 @@ public class Login extends JFrame implements ActionListener {
                     new security(username);
                     // new Loading(username).setVisible(false);
                 }
-                
-                 else {
+
+                else {
                     JOptionPane.showMessageDialog(null, "invalid Login!");
                 }
 
@@ -145,7 +146,5 @@ public class Login extends JFrame implements ActionListener {
         }
 
     }
-
-   
 
 }

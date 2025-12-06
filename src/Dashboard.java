@@ -41,9 +41,7 @@ public class Dashboard extends JFrame implements ActionListener, MouseListener, 
 
         // Add Dashboard logo
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("ICONS/dashboard.png"));
-        Image i5 = i4.getImage().getScaledInstance(160, 170, Image.SCALE_DEFAULT);
-        ImageIcon i6 = new ImageIcon(i5);
+        ImageIcon i6 = ImageLoader.loadAndScaleImage("dashboard.png", 160, 170);
         JLabel l2 = new JLabel(i6);
         l2.setBounds(8, 8, 60, 42);
         p1.add(l2);
@@ -266,9 +264,7 @@ public class Dashboard extends JFrame implements ActionListener, MouseListener, 
 
         // Add Dashboard Image
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/home.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(1540, 810, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("home.jpg", 1540, 810);
         JLabel l1 = new JLabel(i3);
         l1.setBounds(0, 0, 1540, 810);
         add(l1);

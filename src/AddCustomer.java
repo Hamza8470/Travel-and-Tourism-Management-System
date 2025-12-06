@@ -95,13 +95,9 @@ public class AddCustomer extends JFrame implements ActionListener {
         bg.add(r1);
         bg.add(r2);
 
-        male = new ImageIcon(ClassLoader.getSystemResource("ICONS/male.png"));
-        Image m2 = male.getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
-        ImageIcon m3 = new ImageIcon(m2);
+        ImageIcon m3 = ImageLoader.loadAndScaleImage("male.png", 30, 30);
         r1.setIcon(m3);
-        female = new ImageIcon(ClassLoader.getSystemResource("ICONS/female.png"));
-        Image m4 = female.getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
-        ImageIcon m5 = new ImageIcon(m4);
+        ImageIcon m5 = ImageLoader.loadAndScaleImage("female.png", 30, 30);
         r2.setIcon(m5);
 
         JLabel l6 = new JLabel("Country :");
@@ -162,9 +158,7 @@ public class AddCustomer extends JFrame implements ActionListener {
         b2.addActionListener(this);
         add(b2);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("ICONS/newcustomer.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(350, 500, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("newcustomer.jpg", 350, 500);
         JLabel l10 = new JLabel(i3);
         l10.setBounds(370, 30, 350, 500);
         add(l10);
