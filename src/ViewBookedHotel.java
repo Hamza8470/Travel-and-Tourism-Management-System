@@ -11,13 +11,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-
-public class ViewBookedHotel extends JFrame implements ActionListener{
+public class ViewBookedHotel extends JFrame implements ActionListener {
     // public static void main(String[] args) {
-    //     new ViewBookedHotel("").setVisible(true);
+    // new ViewBookedHotel("").setVisible(true);
     // }
     JButton b1;
-    ViewBookedHotel(String username){
+
+    ViewBookedHotel(String username) {
         setBounds(460, 200, 960, 600);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
@@ -27,7 +27,6 @@ public class ViewBookedHotel extends JFrame implements ActionListener{
         il.setBounds(450, 10, 480, 540);
         add(il);
 
-        
         JLabel l1 = new JLabel("VIEW BOOKED HOTEL DETAILS");
         l1.setBounds(70, 10, 320, 30);
         l1.setFont(new Font("Yu Mincho", Font.PLAIN, 20));
@@ -93,7 +92,6 @@ public class ViewBookedHotel extends JFrame implements ActionListener{
         l16.setFont(new Font("Tahoma", Font.PLAIN, 14));
         add(l16);
 
-        
         JLabel l8 = new JLabel("ID :");
         l8.setBounds(30, 310, 100, 30);
         l8.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -134,7 +132,6 @@ public class ViewBookedHotel extends JFrame implements ActionListener{
         l20.setForeground(Color.red);
         l20.setFont(new Font("Tahoma", Font.BOLD, 14));
         add(l20);
-        
 
         b1 = new JButton("Back");
         b1.setForeground(Color.WHITE);
@@ -145,8 +142,8 @@ public class ViewBookedHotel extends JFrame implements ActionListener{
 
         try {
             Conns c = new Conns();
-            ResultSet rs=c.stmt.executeQuery("select * from bookhotel where username = '"+username+"'");
-            while(rs.next()){
+            ResultSet rs = c.stmt.executeQuery("select * from bookhotel where username = '" + username + "'");
+            while (rs.next()) {
                 l11.setText(rs.getString(1));
                 l12.setText(rs.getString(2));
                 l13.setText(rs.getString(3));
@@ -163,15 +160,12 @@ public class ViewBookedHotel extends JFrame implements ActionListener{
             e.printStackTrace();
         }
 
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+
+        this.setVisible(false);
 
     }
 
-    public void actionPerformed(ActionEvent ae){
-      
-            this.setVisible(false);
-
-
-    }
-
-    
 }

@@ -13,7 +13,7 @@ public class Conns {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/tms?serverTimezone=UTC&useSSL=false";
             // Try common credential options (root:root, root:''), useful for XAMPP
-            String[][] creds = { {"root", "root"}, {"root", ""} };
+            String[][] creds = { { "root", "root" }, { "root", "" } };
             boolean connected = false;
             for (String[] cred : creds) {
                 try {
@@ -29,13 +29,16 @@ public class Conns {
             if (!connected) {
                 // Final attempt without password parameter (some XAMPP setups)
                 try {
-                    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tms?serverTimezone=UTC&useSSL=false", "root", null);
+                    c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tms?serverTimezone=UTC&useSSL=false",
+                            "root", null);
                     stmt = c.createStatement();
                     System.out.println("Database connected successfully with user='root' (no password).\n");
                     connected = true;
                 } catch (SQLException se) {
-                    System.err.println("Database connection failed. Make sure MySQL is running and database 'tms' exists.");
-                    System.err.println("Tried common credentials: root/root and root/(empty).\nError: " + se.getMessage());
+                    System.err.println(
+                            "Database connection failed. Make sure MySQL is running and database 'tms' exists.");
+                    System.err.println(
+                            "Tried common credentials: root/root and root/(empty).\nError: " + se.getMessage());
                     se.printStackTrace();
                 }
             }

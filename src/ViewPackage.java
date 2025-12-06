@@ -11,11 +11,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+public class ViewPackage extends JFrame implements ActionListener {
 
-public class ViewPackage extends JFrame implements ActionListener{
-    
     JButton b1;
-    ViewPackage(String username){ 
+
+    ViewPackage(String username) {
         setBounds(500, 200, 850, 460);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
@@ -25,7 +25,6 @@ public class ViewPackage extends JFrame implements ActionListener{
         il.setBounds(360, 40, 450, 320);
         add(il);
 
-        
         JLabel l1 = new JLabel("VIEW PACKAGE DETAILS");
         l1.setBounds(80, 10, 300, 30);
         l1.setFont(new Font("Yu Mincho", Font.BOLD, 20));
@@ -125,8 +124,8 @@ public class ViewPackage extends JFrame implements ActionListener{
 
         try {
             Conns c = new Conns();
-            ResultSet rs=c.stmt.executeQuery("select * from bookpackage where username = '"+username+"'");
-            while(rs.next()){
+            ResultSet rs = c.stmt.executeQuery("select * from bookpackage where username = '" + username + "'");
+            while (rs.next()) {
                 l11.setText(rs.getString("username"));
                 l12.setText(rs.getString("package"));
                 l13.setText(rs.getString("persons"));
@@ -140,15 +139,12 @@ public class ViewPackage extends JFrame implements ActionListener{
             e.printStackTrace();
         }
 
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+
+        this.setVisible(false);
 
     }
 
-    public void actionPerformed(ActionEvent ae){
-      
-            this.setVisible(false);
-
-
-    }
-
-    
 }

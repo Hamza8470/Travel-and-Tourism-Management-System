@@ -1,18 +1,19 @@
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-import java.awt.*;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import javax.swing.JTextField;
 
-class Forgotpassword extends JFrame implements  ActionListener {
+class Forgotpassword extends JFrame implements ActionListener {
     JTextField t1, t2, t3, t4, t5;
     JButton b1, b2, b3;
 
@@ -156,5 +157,4 @@ class Forgotpassword extends JFrame implements  ActionListener {
 
     }
 
-   
 }

@@ -1,14 +1,14 @@
 
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Payment extends JFrame implements ActionListener {
-    
 
     JButton b1, b2, b3, b4, b5;
 
@@ -35,7 +35,7 @@ public class Payment extends JFrame implements ActionListener {
         b1.setBounds(100, 100, 100, 40);
         b1.addActionListener(this);
         l1.add(b1);
-        
+
         b2 = new JButton("Back");
         b2.addActionListener(this);
         b2.setForeground(Color.WHITE);

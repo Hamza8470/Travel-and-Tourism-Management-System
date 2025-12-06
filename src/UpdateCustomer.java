@@ -1,19 +1,16 @@
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import javax.swing.JTextField;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.*;
 
 public class UpdateCustomer extends JFrame implements ActionListener {
     JTextField t1, t2, t3, t4, t5, t6, t7, t8, t9;
@@ -33,92 +30,92 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
         JLabel l1 = new JLabel("Username :");
         l1.setBounds(30, 50, 100, 25);
-        l1.setFont(new Font("Tamoha",Font.BOLD,15));
+        l1.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l1);
 
         t1 = new JTextField();
         t1.setBounds(170, 50, 200, 25);
-        t1.setFont(new Font("Tamoha",Font.BOLD,15));
+        t1.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t1);
 
         JLabel l2 = new JLabel("ID :");
         l2.setBounds(30, 95, 100, 25);
-        l2.setFont(new Font("Tamoha",Font.BOLD,15));
+        l2.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l2);
 
         t8 = new JTextField();
         t8.setBounds(170, 95, 200, 25);
-        t8.setFont(new Font("Tamoha",Font.BOLD,15));
+        t8.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t8);
 
         JLabel l3 = new JLabel("Number :");
         l3.setBounds(30, 140, 100, 25);
-        l3.setFont(new Font("Tamoha",Font.BOLD,15));
+        l3.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l3);
 
         t2 = new JTextField();
         t2.setBounds(170, 140, 200, 25);
-        t2.setFont(new Font("Tamoha",Font.BOLD,15));
+        t2.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t2);
 
         JLabel l4 = new JLabel("Name :");
-        l4.setFont(new Font("Tamoha",Font.BOLD,15));
+        l4.setFont(new Font("Tamoha", Font.BOLD, 15));
         l4.setBounds(30, 185, 100, 25);
         add(l4);
 
         t3 = new JTextField();
         t3.setBounds(170, 185, 200, 25);
-        t3.setFont(new Font("Tamoha",Font.BOLD,15));
+        t3.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t3);
 
         JLabel l5 = new JLabel("Gender :");
         l5.setBounds(30, 225, 100, 25);
-        l5.setFont(new Font("Tamoha",Font.BOLD,15));
+        l5.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l5);
 
         t9 = new JTextField();
         t9.setBounds(170, 225, 200, 25);
-        t9.setFont(new Font("Tamoha",Font.BOLD,15));
+        t9.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t9);
 
         JLabel l6 = new JLabel("Country :");
         l6.setBounds(30, 270, 100, 25);
-        l6.setFont(new Font("Tamoha",Font.BOLD,15));
+        l6.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l6);
 
         t4 = new JTextField();
         t4.setBounds(170, 270, 200, 25);
-        t4.setFont(new Font("Tamoha",Font.BOLD,15));
+        t4.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t4);
 
         JLabel l7 = new JLabel("Address :");
         l7.setBounds(30, 315, 100, 25);
-        l7.setFont(new Font("Tamoha",Font.BOLD,15));
+        l7.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l7);
 
         t5 = new JTextField();
         t5.setBounds(170, 315, 200, 25);
-        t5.setFont(new Font("Tamoha",Font.BOLD,15));
+        t5.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t5);
 
         JLabel l8 = new JLabel("Phone :");
         l8.setBounds(30, 365, 100, 25);
-        l8.setFont(new Font("Tamoha",Font.BOLD,15));
+        l8.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l8);
 
         t6 = new JTextField();
         t6.setBounds(170, 365, 200, 25);
-        t6.setFont(new Font("Tamoha",Font.BOLD,15));
+        t6.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t6);
 
         JLabel l9 = new JLabel("Email :");
         l9.setBounds(30, 410, 100, 25);
-        l9.setFont(new Font("Tamoha",Font.BOLD,15));
+        l9.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(l9);
 
         t7 = new JTextField();
         t7.setBounds(170, 410, 200, 25);
-        t7.setFont(new Font("Tamoha",Font.BOLD,15));
+        t7.setFont(new Font("Tamoha", Font.BOLD, 15));
         add(t7);
 
         b1 = new JButton("Update");
@@ -200,5 +197,4 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
     }
 
-   
 }
