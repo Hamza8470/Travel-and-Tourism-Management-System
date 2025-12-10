@@ -42,6 +42,7 @@ public class Payment extends JFrame implements ActionListener {
         b2.setBackground(Color.BLACK);
         b2.setBounds(185, 300, 80, 40);
         l1.add(b2);
+        // hi this is just for testing
 
         b3 = new JButton("Google pay");
         b3.setForeground(Color.black);
