@@ -64,7 +64,7 @@ public class Dashboard extends JFrame implements ActionListener, MouseListener, 
 
         // copyright label
 
-        JLabel copyright = new JLabel("© 2021 Shivam Seth");
+        JLabel copyright = new JLabel("© 2025 Mohammed Hamza");
         copyright.setBounds(10, 650, 160, 25);
         p2.add(copyright);
 
