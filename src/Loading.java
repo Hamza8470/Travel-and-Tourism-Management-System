@@ -58,7 +58,7 @@ public class Loading extends JFrame implements Runnable {
         setLayout(null);// by default border Layout
         getContentPane().setBackground(Color.white);
 
-        ImageIcon i1 = ImageLoader.loadAndScaleImage("bookedhotelDetails.jpg", 545, 360);
+        ImageIcon i1 = ImageLoader.loadAndScaleImage("twh.png", 545, 360);
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0, 0, 545, 360);
         add(l1);

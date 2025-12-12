@@ -1,10 +1,9 @@
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-import java.sql.ResultSet;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,7 +21,7 @@ public class ViewBookedHotel extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
-        ImageIcon i3 = ImageLoader.loadAndScaleImage("bookedhotelDetails.jpg", 480, 540);
+        ImageIcon i3 = ImageLoader.loadAndScaleImage("bookedhotelDetails.png", 480, 540);
         JLabel il = new JLabel(i3);
         il.setBounds(450, 10, 480, 540);
         add(il);

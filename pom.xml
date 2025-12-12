@@ -28,6 +28,10 @@
                     <include>**/*.png</include>
                     <include>**/*.gif</include>
                 </includes>
+                <excludes>
+                    <exclude>Image/image.png</exclude>
+                    <exclude>Image/certificate.jpg</exclude>
+                </excludes>
             </resource>
         </resources>
         <plugins>
@@ -53,11 +57,12 @@
     </build>
 
     <dependencies>
-        <!-- MySQL Connector -->
+        <!-- MySQL Connector - marked as provided to exclude from JAR -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.23</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
