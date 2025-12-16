@@ -2,6 +2,7 @@
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-181717?style=for-the-badge&logo=github&logoColor=white)
+
 A Java-based Travel and Tourism Management System designed to automate and digitalize travel booking and management processes.
 This project uses Java, Maven, MySQL, and GitHub to provide a scalable, secure, and maintainable solution for travel agencies and customers.
 
