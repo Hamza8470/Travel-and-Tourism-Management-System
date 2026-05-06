@@ -1,4 +1,5 @@
 
+import java.awt.GraphicsEnvironment;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -6,6 +7,18 @@ import javax.swing.JLabel;
 public class Splash {
 
     public static void main(String[] args) {
+        if (GraphicsEnvironment.isHeadless()) {
+            System.out.println("Headless environment detected. GUI startup is skipped inside Docker.");
+            try {
+                while (true) {
+                    Thread.sleep(60000);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            return;
+        }
+
         SplashFrame frame = new SplashFrame();
         frame.setVisible(true);
         int x = 1;
